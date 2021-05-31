@@ -1,5 +1,5 @@
 var config ={
-    db:"mongodb://localhost:27017/traideIn",
+    db:"mongodb://192.168.100.3:27017/traideIn",
     secretKey:"Home"
 }
 
