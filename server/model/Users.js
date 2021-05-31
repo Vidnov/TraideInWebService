@@ -34,6 +34,10 @@ const Users = new Schema({
     Age:{
         type:Date,
         required:false
+    },
+    Retail:{
+        type:String
+
     }
 
 

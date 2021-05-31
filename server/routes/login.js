@@ -10,6 +10,7 @@ const loginMessageTrue = "Пользователь найден"
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
+    console.log("Запрос на авторизацию")
     const { Login, Password } = req.body
     User.findOne({ Login }, (err, user) => {
         if (user) {

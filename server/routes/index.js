@@ -13,11 +13,11 @@ router.get('/', function (req, res, next) {
   res.send('ok')
 });
 router.post('/', function (req, res, next) {
-  
-  const{name,phone,code,date}=JSON.parse(req.body.data)
+
+  const { name, phone, code, date } = JSON.parse(req.body.data)
   phone.replace(/\s+/g, '').trim();
   console.log(phone)
-  const urlApi =`http://n.vidnov@sotiks.net:${key}@gate.smsaero.ru/v2/sms/send?numbers[]=79997302315&text=Code+Verificate:+${code}&sign=SMS Aero`;
+  const urlApi = `http://n.vidnov@sotiks.net:${key}@gate.smsaero.ru/v2/sms/send?numbers[]=79997302315&text=Code+Verificate:+${code}&sign=SMS Aero`;
   console.log(urlApi)
   getApi(urlApi);
 
@@ -27,14 +27,14 @@ router.post('/', function (req, res, next) {
 });
 
 var getApi = (url) => {
-  fetch(url,{
-    headers: { 
+  fetch(url, {
+    headers: {
       'Content-Type': 'application/json',
-   }
+    }
   })
     .then(res => {
       console.log(res);
-      
+
     })
     .catch(e => {
       console.error(e);
